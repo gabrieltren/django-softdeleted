@@ -4,7 +4,8 @@ from django.utils import timezone
 
 from .softdelete import DeleteManager
 
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
+from contas.models import Usuario
 
 class BaseModel(models.Model):
     class Meta:
@@ -40,7 +41,7 @@ class Movimentacao(BaseModel):
     valor = models.DecimalField(max_digits=15, decimal_places=2, default=0.00)
     data = models.DateTimeField(blank=True, null=True)
     tipo = models.CharField(max_length=100, choices=TIPO_MOVIMENTACAO, default="entrada")
-    usuario = models.ForeignKey(User, related_name="usuario_movimentacao", on_delete=models.CASCADE)
+    usuario = models.ForeignKey(Usuario, related_name="usuario_movimentacao", on_delete=models.CASCADE)
     
     class Meta:
         verbose_name = "Movimentação"
