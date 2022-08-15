@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block container %}
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tipo</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Data</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for m in movs %}
+        <tr>
+            <td>{{ m.id }}</td>
+            <td>{{ m.tipo }}</td>
+            <td>{{ m.valor }}</td>
+            <td>{{ m.data }}</td>
+        <tr>
+        {% endfor %}
+        
+    </tbody>
+</table>
+{% include 'paginacao.html' %}
+{% endblock %}

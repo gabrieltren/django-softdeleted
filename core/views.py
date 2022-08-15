@@ -8,7 +8,7 @@ from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 def mov(request):
     mov = Movimentacao.objects.all()
     pagina = request.GET.get('page', 1)
-    paginacao = Paginator(mov, 1)
+    paginacao = Paginator(mov, 5)
     
     try:
         movs = paginacao.page(pagina)
@@ -18,5 +18,5 @@ def mov(request):
         movs = paginacao.page(paginacao.num_pages)
         
     context = {'movs': movs}
-    print(dir(movs.paginator))
-    return render(request, 'mov.html', context)
+    # print(dir(movs.paginator))
+    return render(request, 'movimentacao.html', context)
