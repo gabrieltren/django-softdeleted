@@ -61,5 +61,6 @@ class MovViewSet(viewsets.ModelViewSet):
     
     def list(self, request):
         queryset = self.get_queryset()
+        # return Response(queryset)
         serializer = self.get_serializer(queryset, many=True)
         return Response(serializer.data)

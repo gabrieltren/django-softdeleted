@@ -3,6 +3,8 @@ from rest_framework import serializers
 import pytz
 from .models import Movimentacao
 from contas.models import Usuario
+
+
 class UsuarioSerializer(serializers.ModelSerializer):
     nome = serializers.SerializerMethodField()
     def get_nome(self,obj):

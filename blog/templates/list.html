@@ -1,0 +1,28 @@
+{% extends "__base.html" %}
+
+{% block container %}
+<table class="table">
+    <tr>
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Palavas</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for post in posts %}
+            <tr>
+                <td>{{post.titulo}}</td>
+                <td>{{post.palavras}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+</table>
+
+
+
+{% if is_paginated %}
+    {% include "_pagination.html" %}
+{% endif %}
+
+{% endblock %}
