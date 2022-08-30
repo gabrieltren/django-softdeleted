@@ -10,6 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
+import django_on_heroku
+
 from decouple import config
 
 from pathlib import Path
@@ -157,3 +159,5 @@ REST_FRAMEWORK = {
     ]
 }
 
+
+django_on_heroku.settings(locals())
