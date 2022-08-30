@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.1/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.1/ref/settings/
 """
-import django_on_heroku
+
 import dj_database_url
 from decouple import config
 
@@ -161,4 +161,3 @@ REST_FRAMEWORK = {
     ]
 }
 
-django_on_heroku.settings(locals())
